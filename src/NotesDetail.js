@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function NotesDetail(props) {
+export default function NotesDetail({note}) {
     return (
         <div>
-            This is the notes detail!
+            {note.text}
         </div>
     );
 }

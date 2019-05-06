@@ -29,6 +29,7 @@ export class NotesApp extends Component {
     }
 
     render() {
+        const theNote = this.state.notes.find(note => this.state.selectedNote === note.id);
         return (
         <div className={styles.app}>
             <div className={styles.list}>
@@ -38,7 +39,9 @@ export class NotesApp extends Component {
                 />
             </div>
             <div className={styles.detail}>
-                <NotesDetail />
+                <NotesDetail 
+                    note={theNote}
+                />
             </div>
         </div>
         );

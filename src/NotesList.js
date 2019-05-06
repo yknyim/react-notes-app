@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function NotesList() {
+export default function NotesList(props) {
     return (
-        <div>
-        
-        </div>
+        <ul>
+            <li>This</li>
+            <li>is</li>
+            <li>the</li>
+            <li>Notes</li>
+            <li>List</li>
+            <li>!</li>
+        </ul>
     );
 }

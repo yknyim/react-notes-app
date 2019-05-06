@@ -7,6 +7,7 @@ export class NotesApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            selectedNote: '1001',
             notes: [         // This will hold an array of objects
                 {
                     id: '1001',
@@ -33,6 +34,7 @@ export class NotesApp extends Component {
             <div className={styles.list}>
                 <NotesList 
                     notes={this.state.notes}
+                    handleSelection={this._selectNote}
                 />
             </div>
             <div className={styles.detail}>
@@ -41,6 +43,14 @@ export class NotesApp extends Component {
         </div>
         );
     };
+
+    _selectNote = (id) => {
+        // choose a note to show
+        this.setState({
+            selectedNote: id
+        });
+    }
+
 }
 
 export default NotesApp;

@@ -22,7 +22,7 @@ export class NotesApp extends Component {
                 {
                     id: '1003',
                     title: 'third note',
-                    text: 'imagine poop emojies here.'
+                    text: 'imagine poop emojis here.'
                 }
             ]
         };

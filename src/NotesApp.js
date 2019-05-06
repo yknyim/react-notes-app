@@ -58,6 +58,8 @@ export class NotesApp extends Component {
         // We can't simply reassign the item in the array.
         // So, we need to create a new array with all the existing notes.
         // But, we want to use the newText for the note with id === idToUpdate
+
+        // Version 1
         const updatedNotes1 = this.state.notes.map(note => {
             if (note.id === idToUpdate) {
                 // return the modified version
@@ -72,31 +74,29 @@ export class NotesApp extends Component {
                 };
             }
         });
-
-        // Version 1
         this.setState({
             notes: updatedNotes1    // Already a copy
         });
 
-        const updatedNotes2 = this.state.notes.filter(note => {
-            return note.id !== idToUpdate;
-        });
-        const theNoteToUpdate = this.state.notes.find(note => note.id === idToUpdate);
-        
-        // Versio 2a
-        this.setState({
-            notes: [
-                ...updatedNotes2,
-                {
-                    ...theNoteToUpdate,
-                    text: newText
-                }
-            ]
-        });
+        // Version 2a
+        // const updatedNotes2 = this.state.notes.filter(note => {
+        //     return note.id !== idToUpdate;
+        // });
+        // const theNoteToUpdate = this.state.notes.find(note => note.id === idToUpdate);
+        // this.setState({
+        //     notes: [
+        //         ...updatedNotes2,
+        //         {
+        //             ...theNoteToUpdate,
+        //             text: newText
+        //         }
+        //     ]
+        // });
+        // ====================================================== 
         // Alternatively, version 2b:
-        this.setState({
-
-        });
+        // this.setState({
+            
+        // });
     }
 
 }

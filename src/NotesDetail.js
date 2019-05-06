@@ -13,7 +13,22 @@ class NotesDetail extends React.Component {
         super(props);
         this.state = {
             isEditting: false,
-            draftText: props.note.text
+            draftText: props.note.text,
+            id: props.note.id
+        };
+    }
+    static getDerivedStateFromProps(props, state) {
+        // There is no `this`.
+        // So, we receive props and state as arguments.
+
+        // Must return an object that describes any modifications to state.
+        if (props.note.id !== state.id) {
+            return {
+                id: props.note.id,
+                draftText: props.note.text
+            };
+        } else {
+            return null
         };
     }
     render() {

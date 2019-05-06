@@ -41,6 +41,7 @@ export class NotesApp extends Component {
             <div className={styles.detail}>
                 <NotesDetail 
                     note={theNote}
+                    handleSave={this._updateNote}
                 />
             </div>
         </div>

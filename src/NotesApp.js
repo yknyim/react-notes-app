@@ -72,6 +72,31 @@ export class NotesApp extends Component {
                 };
             }
         });
+
+        // Version 1
+        this.setState({
+            notes: updatedNotes1    // Already a copy
+        });
+
+        const updatedNotes2 = this.state.notes.filter(note => {
+            return note.id !== idToUpdate;
+        });
+        const theNoteToUpdate = this.state.notes.find(note => note.id === idToUpdate);
+        
+        // Versio 2a
+        this.setState({
+            notes: [
+                ...updatedNotes2,
+                {
+                    ...theNoteToUpdate,
+                    text: newText
+                }
+            ]
+        });
+        // Alternatively, version 2b:
+        this.setState({
+
+        });
     }
 
 }
